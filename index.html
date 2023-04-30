@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CoinMarketApp</title>
+
+   <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+   <header class="header">
+      <div class="container header-container">
+         <div class="header-logo">
+            <a href="#"><img src="./img/logo.svg" alt="Logo"></a>
+         </div>
+
+         <nav class="header-nav">
+            <ul class="header-list">
+               <li class="header-item">
+                  <a href="#home" class="header-link active">ОБМЕНЯТЬ ВАЛЮТЫ</a>
+               </li>
+               <li class="header-item">
+                  <a href="#price" class="header-link ">резерв ВАЛЮТы</a>
+               </li>
+               <li class="header-item">
+                  <a href="#ready" class="header-link ">отзывы</a>
+               </li>
+               <li class="header-item">
+                  <a href="#faq" class="header-link ">faq</a>
+               </li>
+            </ul>
+         </nav>
+         <div class="header__burger">
+            <span></span>
+            <span></span>
+            <span></span>
+         </div>
+         <div class="header-text">
+            <h2>ОБМЕН ВАЛЮТ</h2>
+         </div>
+      </div>
+   </header>
+
+   <main>
+
+
+      <section class="section global">
+
+         <div class="global-buttons container">
+            <button class="global-button global-button-fiat active">Обменять фиат на крипту</button>
+            <button class="global-button global-button-crypty">Обменять крипту на фиат</button>
+         </div>
+
+         <div class="global-container global-container-fiat active container">
+            <form action="">
+
+               <div class="form-item">
+                  <input type="text" name="amount" id="amount2" placeholder="Enter Amount" required>
+
+
+                  <div id="select-field">
+
+                     <select name="fromCurrency" id="fromCurrency2" onchange="showFromCurrencyName2()">
+                        <option value="USD" selected="">USD - US Dollar</option>
+                        <option value="RUB">RUB - Rubli</option>
+                        <option value="EUR">EUR - Euro</option>
+                        <option value="GBP">GBP - British Pound</option>
+                        <option value="CAD">CAD - Canadian Dollar</option>
+                        <option value="AUD">AUD - Australian Dollar</option>
+                        <option value="JPY">JPY - Japanese Yen</option>
+                        <option value="INR">INR - India Rupee</option>
+                        <option value="NZD">NZD - New Zealand Dollar</option>
+                        <option value="CHF">CHF - Swiss Franc</option>
+                        <option value="ZAR">ZAR - South African Rand</option>
+                        <option value="BGN">BGN - Bulgarian Lev</option>
+                        <option value="SGD">SGD - Singapore Dollar</option>
+                        <option value="HKD">HKD - Hong Kong Dollar</option>
+                        <option value="SEK">SEK - Swedish Krona</option>
+                        <option value="THB">THB - Thai Baht</option>
+                        <option value="HUF">HUF - Hungarian Forint</option>
+                        <option value="CNY">CNY - Chinese Yuan Renminbi</option>
+                        <option value="NOK">NOK - Norwegian Krone</option>
+                        <option value="MXN">MXN - Mexican Peso</option>
+                        <option value="GHS">GHS - Ghanians Cedi</option>
+                        <option value="NGN">NGN - Nigerian Naira</option>
+                     </select>
+
+                  </div>
+               </div>
+               <img src="./img/arrows.svg" alt="arrow">
+
+               <div class="form-item">
+                  <input type="text" name="amount" id="result2" placeholder="Enter Amount" required>
+                  <div id="select-field">
+
+                     <select name="toCurrency" id="toCurrency2" onchange="showCurrencyName2()">
+                        <option value="BTC">Bitcoin (BTC)</option>
+                        <option value="ETH">Ethereum (ETH)</option>
+                        <option value="USDT">Tether (USDT)</option>
+                        <option value="BNB">Binance Coin (BNB)</option>
+                        <option value="USDC">USD Coin (USDC)</option>
+                        <option value="XRP">XRP (XRP)</option>
+                        <option value="BUSD">Binance USD (BUSD)</option>
+                        <option value="ADA">cardano (ADA)</option>
+                        <option value="DOGE">Dogecoin (DOGE)</option>
+                        <option value="MATIC">Polygon (MATIC)</option>
+                        <option value="SOL">Solana (SOL)</option>
+                        <option value="DOT">Polkadot (DOT)</option>
+                        <option value="SHIB">Shiba Inu (SHIB)</option>
+                        <option value="LTC">Litecoin (LTC)</option>
+                        <option value="TRX">Tron (TRX)</option>
+                        <option value="AVAX">Avalanche (AVAX)</option>
+                     </select>
+                  </div>
+
+
+               </div>
+
+
+
+            </form>
+            <button href="#" id="convert2" class="primary-btn form-button form-button">Обменять</button>
+         </div>
+         <div class="global-container global-container-crypto container">
+            <form action="">
+               <div class="form-item">
+                  <input type="text" name="amount" id="amount" placeholder="Enter Amount" required>
+
+                  <div id="select-field">
+
+                     <div id="select-field">
+
+                        <select name="fromCurrency" id="fromCurrency" onchange="showCurrencyName()">
+                           <option value="BTC">Bitcoin (BTC)</option>
+                           <option value="ETH">Ethereum (ETH)</option>
+                           <option value="USDT">Tether (USDT)</option>
+                           <option value="BNB">Binance Coin (BNB)</option>
+                           <option value="USDC">USD Coin (USDC)</option>
+                           <option value="XRP">XRP (XRP)</option>
+                           <option value="BUSD">Binance USD (BUSD)</option>
+                           <option value="ADA">cardano (ADA)</option>
+                           <option value="DOGE">Dogecoin (DOGE)</option>
+                           <option value="MATIC">Polygon (MATIC)</option>
+                           <option value="SOL">Solana (SOL)</option>
+                           <option value="DOT">Polkadot (DOT)</option>
+                           <option value="SHIB">Shiba Inu (SHIB)</option>
+                           <option value="LTC">Litecoin (LTC)</option>
+                           <option value="TRX">Tron (TRX)</option>
+                           <option value="AVAX">Avalanche (AVAX)</option>
+                        </select>
+
+                     </div>
+                  </div>
+
+
+               </div>
+               <img src="./img/arrows.svg" alt="arrow">
+
+               <div class="form-item">
+                  <input type="text" name="result" id="result" placeholder="Enter Amount" required>
+
+                  <select name="toCurrency" id="toCurrency" onchange="showFromCurrencyName()">
+                     <option value="USD" selected="">USD - US Dollar</option>
+                     <option value="RUB">RUB - Rubli</option>
+                     <option value="EUR">EUR - Euro</option>
+                     <option value="GBP">GBP - British Pound</option>
+                     <option value="CAD">CAD - Canadian Dollar</option>
+                     <option value="AUD">AUD - Australian Dollar</option>
+                     <option value="JPY">JPY - Japanese Yen</option>
+                     <option value="INR">INR - India Rupee</option>
+                     <option value="NZD">NZD - New Zealand Dollar</option>
+                     <option value="CHF">CHF - Swiss Franc</option>
+                     <option value="ZAR">ZAR - South African Rand</option>
+                     <option value="BGN">BGN - Bulgarian Lev</option>
+                     <option value="SGD">SGD - Singapore Dollar</option>
+                     <option value="HKD">HKD - Hong Kong Dollar</option>
+                     <option value="SEK">SEK - Swedish Krona</option>
+                     <option value="THB">THB - Thai Baht</option>
+                     <option value="HUF">HUF - Hungarian Forint</option>
+                     <option value="CNY">CNY - Chinese Yuan Renminbi</option>
+                     <option value="NOK">NOK - Norwegian Krone</option>
+                     <option value="MXN">MXN - Mexican Peso</option>
+                     <option value="GHS">GHS - Ghanians Cedi</option>
+                     <option value="NGN">NGN - Nigerian Naira</option>
+                  </select>
+
+               </div>
+
+
+
+
+
+            </form>
+            <button href="#" id="convert1" class="primary-btn form-button form-button">Обменять</button>
+         </div>
+
+
+
+
+
+      </section>
+
+      <section class="section form-crypto">
+         <div class="form-crypto-container container">
+            <div class="form-text">
+               <h2>Форма для заполнения:</h2>
+               <svg width="34" height="34" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="3.12132" y1="2.00024" x2="43.4264" y2="42.3053" stroke="black" stroke-width="3"
+                     stroke-linecap="round" />
+                  <line x1="2" y1="42.3052" x2="42.3051" y2="2.00011" stroke="black" stroke-width="3"
+                     stroke-linecap="round" />
+               </svg>
+
+            </div>
+            <form class="form-crypto-item">
+               <div class="form-inputs">
+                  <input type="text" placeholder="ФИО">
+                  <input type="text" placeholder="Почта">
+                  <input type="text" placeholder="Адрес">
+                  <input type="text" placeholder="Сеть">
+               </div>
+               <button type="submit">Обменять</button>
+            </form>
+         </div>
+      </section>
+
+      <section class="section form-fiat">
+         <div class="form-fiat-container container">
+            <div class="form-fiat-text ">
+               <h2>Форма для заполнения:</h2>
+               <svg width="34" height="34" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="3.12132" y1="2.00024" x2="43.4264" y2="42.3053" stroke="black" stroke-width="3"
+                     stroke-linecap="round" />
+                  <line x1="2" y1="42.3052" x2="42.3051" y2="2.00011" stroke="black" stroke-width="3"
+                     stroke-linecap="round" />
+               </svg>
+
+            </div>
+            <form class="form-fiat-item">
+               <div class="form-fiat-inputs">
+                  <input type="text" placeholder="Адрес">
+               </div>
+               <button type="submit">Обменять</button>
+            </form>
+         </div>
+      </section>
+
+      <section id="price" class="section price">
+         <div class="price-title container">
+            <h2>РЕЗЕРВЫ ВАЛЮТ</h2>
+         </div>
+         <div class="price-container container">
+            <div class="price-item">
+               <img src="./img/icons/tinkoff.svg" alt="tinkoff">
+               <div class="price-text">
+                  <h2>Тинькофф RUB</h2>
+                  <p>111630448.51</p>
+               </div>
+            </div>
+            <div class="price-item">
+               <img src="./img/icons/cber.svg" alt="icon">
+               <div class="price-text">
+                  <h2>Сбербанк RUB</h2>
+                  <p>256024167.87</p>
+               </div>
+            </div>
+            <div class="price-item">
+               <img src="./img/icons/ymoney.svg" alt="icon">
+               <div class="price-text">
+                  <h2>Юмани </h2>
+                  <p>2950027.95</p>
+               </div>
+            </div>
+            <div class="price-item">
+               <img src="./img/icons/kivi.svg" alt="icon">
+               <div class="price-text">
+                  <h2>Qiwi RUB</h2>
+                  <p>21103409.2</p>
+               </div>
+            </div>
+            <div class="price-item">
+               <img src="./img/icons/visa.svg" alt="icon">
+               <div class="price-text">
+                  <h2>VISA/MC RUB</h2>
+                  <p>12478193.84</p>
+               </div>
+            </div>
+            <div class="price-item">
+               <img src="./img/icons/alfa.svg" alt="icon">
+               <div class="price-text">
+                  <h2>АльфаБанк RUB</h2>
+                  <p>4767082.41</p>
+               </div>
+            </div>
+            <div class="price-item">
+               <img src="./img/icons/btb.svg" alt="icon">
+               <div class="price-text">
+                  <h2>ВТБ RUB</h2>
+                  <p>20388366.58</p>
+               </div>
+            </div>
+            <div class="price-item">
+               <img src="./img/icons/mir.svg" alt="icon">
+               <div class="price-text">
+                  <h2>Карта МИР RUB</h2>
+                  <p>11520544.66</p>
+               </div>
+            </div>
+            <div class="price-item">
+               <img src="./img/icons/bitcoin.svg" alt="icon">
+               <div class="price-text">
+                  <h2>Bitcoin BTC</h2>
+                  <p>848472</p>
+               </div>
+            </div>
+
+            <div class="price-item">
+               <img src="./img/icons/usdt.svg" alt="icon">
+               <div class="price-text">
+                  <h2>USDT TRC - 20</h2>
+                  <p>1094274.1743</p>
+               </div>
+            </div>
+
+            <div class="price-item">
+               <img src="./img/icons/usdt.svg" alt="icon">
+               <div class="price-text">
+                  <h2>USDT ЕRC - 20</h2>
+                  <p>43547.5272</p>
+               </div>
+            </div>
+
+            <div class="price-item">
+               <img src="./img/icons/usdt.svg" alt="icon">
+               <div class="price-text">
+                  <h2>USDT BEP - 20</h2>
+                  <p>114244.6086</p>
+               </div>
+            </div>
+
+            <div class="price-item">
+               <img src="./img/icons/ltc.svg" alt="icon">
+               <div class="price-text">
+                  <h2>Litecoin LTC</h2>
+                  <p>3.313512</p>
+               </div>
+            </div>
+
+            <div class="price-item">
+               <img src="./img/icons/eth.svg" alt="icon">
+               <div class="price-text">
+                  <h2>Ethereum ETH</h2>
+                  <p>62.28287</p>
+               </div>
+            </div>
+
+            <div class="price-item">
+               <img src="./img/icons/bnb.svg" alt="icon">
+               <div class="price-text">
+                  <h2>BNB</h2>
+                  <p>43.75434169</p>
+               </div>
+            </div>
+
+            
+         </div>
+      </section>
+
+      <section class="section testemonials">
+         <div class="testemonials-title container">
+            <h2>ОТЗЫВЫ</h2>
+         </div>
+         <div class="testemonials-container container">
+            <div class="testemonials-item">
+               <h2>Слава 23.04.2023, 05:32</h2>
+               <p>В первый раз все пришло. Теперь буду с вами постоянно!</p>
+            </div>
+
+            <div class="testemonials-item">
+               <h2>Slainte, 05.04.2023, 11:45</h2>
+               <p>Всё хорошо, поддержка пришла на помощь, когда допустили ошибку в адресе кошелька</p>
+            </div>
+            <div class="testemonials-item">
+               <h2>Alex 04.04.2023, 10:33</h2>
+               <p>Неплохо. Всего потребовался немного времени и пробная транза прошла отлично.</p>
+            </div>
+
+            <div class="testemonials-item">
+               <h2>Иван В 25.03.2023, 15:24</h2>
+               <p>Ещё один обмен быстро и четко!</p>
+            </div>
+
+            <div class="testemonials-item">
+               <h2>Дима 04.03.2023, 13:56</h2>
+               <p>Всё отлично, частенько пользуюсь этим обменником!</p>
+            </div>
+
+            <div class="testemonials-item">
+               <h2>Sergey 26.02.2023, 10:32</h2>
+               <p>Отличный сервис, быстрые переводы, ни разу не возникало проблем!</p>
+            </div>
+         </div>
+      </section>
+
+      <section id="faq" class="section faq">
+         <div class="faq-title container">
+            <h2>faq</h2>
+         </div>
+         <div class="faq-container container">
+            <div class="faq-item">
+               <div class="faq-up">
+                  <h2>Какие гарантии предоставляет ChangeNow?</h2>
+                  <svg width="25" height="25" viewBox="0 0 44 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M2 2L22 22L42 2" stroke="white" stroke-width="4" />
+                  </svg>
+
+               </div>
+               <div class="faq-down">
+                  <p>Вся юридическая информация о Едином Обмене находится в открытом доступе. Мы лицензированы и имеем
+                     свою торговую марку на Роспатенте. Используя сервис Единого Обмена Вы защищены. Пользовательским
+                     соглашением, согласно которому средства возвращаются на счет списания, если сделка не была
+                     завершена в течении 24 часов с момента оформления заявки.</p>
+               </div>
+            </div>
+            <div class="faq-item">
+               <div class="faq-up">
+                  <h2>Какие гарантии предоставляет ChangeNow?</h2>
+                  <svg width="25" height="25" viewBox="0 0 44 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M2 2L22 22L42 2" stroke="white" stroke-width="4" />
+                  </svg>
+
+               </div>
+               <div class="faq-down">
+                  <p>Вся юридическая информация о Едином Обмене находится в открытом доступе. Мы лицензированы и имеем
+                     свою торговую марку на Роспатенте. Используя сервис Единого Обмена Вы защищены. Пользовательским
+                     соглашением, согласно которому средства возвращаются на счет списания, если сделка не была
+                     завершена в течении 24 часов с момента оформления заявки.</p>
+               </div>
+            </div>
+            <div class="faq-item">
+               <div class="faq-up">
+                  <h2>Какие гарантии предоставляет ChangeNow?</h2>
+                  <svg width="25" height="25" viewBox="0 0 44 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M2 2L22 22L42 2" stroke="white" stroke-width="4" />
+                  </svg>
+
+               </div>
+               <div class="faq-down">
+                  <p>Вся юридическая информация о Едином Обмене находится в открытом доступе. Мы лицензированы и имеем
+                     свою торговую марку на Роспатенте. Используя сервис Единого Обмена Вы защищены. Пользовательским
+                     соглашением, согласно которому средства возвращаются на счет списания, если сделка не была
+                     завершена в течении 24 часов с момента оформления заявки.</p>
+               </div>
+            </div>
+
+         </div>
+      </section>
+   </main>
+
+   <script>
+      let button1 = document.querySelector('#convert2')
+      let button2 = document.querySelector('#convert1')
+      let formCrypto = document.querySelector('.form-crypto')
+      let formFiat = document.querySelector('.form-fiat')
+      let formCryptoClose = document.querySelector('.form-text svg')
+      let formFiatClose = document.querySelector('.form-fiat-text svg')
+
+      button1.addEventListener('click', function () {
+         formCrypto.classList.add('active')
+      })
+      button2.addEventListener('click', function () {
+         formFiat.classList.add('active')
+      })
+      formCryptoClose.addEventListener('click', function () {
+         formCrypto.classList.remove('active')
+
+      })
+      formFiatClose.addEventListener('click', function () {
+         formFiat.classList.remove('active')
+
+      })
+   </script>
+
+   <script>
+      let links = document.querySelectorAll('.faq-item')
+      links.forEach(link => {
+         link.addEventListener('click', function () {
+            link.classList.toggle('active')
+         })
+      })
+
+   </script>
+
+   <script>
+
+      function showCurrencyName() {
+         var selectCurrency = document.getElementById("toCurrency");
+         var currencyName = selectCurrency.options[selectCurrency.selectedIndex].text;
+      }
+
+      function showFromCurrencyName() {
+         var selectFromCurrency = document.getElementById("fromCurrency");
+         var fromCurrencyName = selectFromCurrency.options[selectFromCurrency.selectedIndex].text;
+      }
+
+      const amountInput = document.querySelector('#amount');
+      const fromCurrencySelect = document.querySelector('#fromCurrency');
+      const toCurrencySelect = document.querySelector('#toCurrency');
+      const convertButton = document.querySelector('#convert');
+      const resultParagraph = document.querySelector('#result');
+
+      amountInput.addEventListener('input', () => {
+
+         const amount = amountInput.value;
+         const fromCurrency = fromCurrencySelect.value;
+         const toCurrency = toCurrencySelect.value;
+         const apiKey = "685419b6bedfb725bb6af07ed3dd6fef8f20a83f05c066d1eb20a10c563c7801";
+         const apiUrl = `https://min-api.cryptocompare.com/data/price?fsym=${toCurrency}&tsyms=${fromCurrency}&api_key=${apiKey}`;
+
+         if (fromCurrency === "RUB" && toCurrency === "USDT") {
+            resultParagraph.value = `${(amount / 70).toFixed(6)} `;
+            return
+         }
+
+         fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+               const rate = data[fromCurrency];
+               const result = amount / rate;
+
+               resultParagraph.value = `${result.toFixed(6)}`;
+               // resultParagraph2.innerHTML = `${amount2} ${fromCurrency2} is equal to ${result2.toFixed(8)} ${toCurrency2}`;
+            })
+            .catch(error => {
+               resultParagraph.innerHTML = "Error: Unable to fetch exchange rate.";
+               console.error(error);
+            });
+      });
+      function showCurrencyName2() {
+         var selectCurrency = document.getElementById("toCurrency2");
+         var currencyName = selectCurrency.options[selectCurrency.selectedIndex].text;
+      }
+
+      function showFromCurrencyName2() {
+         var selectFromCurrency = document.getElementById("fromCurrency2");
+         var fromCurrencyName2 = selectFromCurrency.options[selectFromCurrency.selectedIndex].text;
+      }
+
+      const amountInput2 = document.querySelector('#amount2');
+      const fromCurrencySelect2 = document.querySelector('#fromCurrency2');
+      const toCurrencySelect2 = document.querySelector('#toCurrency2');
+      const convertButton2 = document.querySelector('#convert2');
+      const resultParagraph2 = document.querySelector('#result2');
+
+      amountInput2.addEventListener('input', () => {
+
+
+         const amount2 = amountInput2.value;
+         const fromCurrency2 = fromCurrencySelect2.value;
+         const toCurrency2 = toCurrencySelect2.value;
+         const apiKey = "685419b6bedfb725bb6af07ed3dd6fef8f20a83f05c066d1eb20a10c563c7801";
+         const apiUrl = `https://min-api.cryptocompare.com/data/price?fsym=${toCurrency2}&tsyms=${fromCurrency2}&api_key=${apiKey}`;
+         console.log(toCurrency2)
+         console.log(fromCurrency2)
+
+         if (fromCurrency2 === "RUB" && toCurrency2 === "USDT") {
+            resultParagraph2.value = `${(amount2 / 70).toFixed(6)} `;
+            return
+         }
+
+         fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+               const rate2 = data[fromCurrency2];
+               const result2 = amount2 / rate2;
+
+               resultParagraph2.value = `${result2.toFixed(6)}`;
+               // resultParagraph2.innerHTML = `${amount2} ${fromCurrency2} is equal to ${result2.toFixed(8)} ${toCurrency2}`;
+            })
+            .catch(error => {
+               resultParagraph2.innerHTML = "Error: Unable to fetch exchange rate.";
+               console.error(error);
+            });
+      });
+   </script>
+
+
+
+   <script src="./js/index.js"></script>
+</body>
+
+</html>
