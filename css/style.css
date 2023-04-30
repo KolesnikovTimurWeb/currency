@@ -98,7 +98,8 @@ input {
 
 
 .header{
-	position: relative;
+	position: fixed;
+	z-index: 100;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -184,6 +185,7 @@ input {
 
 
 .global{
+	margin-top: 100px;
 	height: 100vh;
 	display: flex;
 	align-items: center;
@@ -277,6 +279,7 @@ input {
 	background: rgba(0, 0, 0, 0.5);
 	backdrop-filter: blur(25px);
 	display: none;
+	z-index: 10000;
 	align-items: center;
 }
 .form-crypto-container,
